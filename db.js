@@ -8,6 +8,7 @@ function getWeather (connection) {
   return connection('weather').select()
 }
 
-function getUser (id, connection) {
-  return connection('users').where('id', id)
+function getLocation (id, connection) {
+  return connection('weather').where('weather.id', id)
+  .join('location', 'weather.location_id', '=', 'location.id')
 }
