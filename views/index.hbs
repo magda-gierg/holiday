@@ -4,11 +4,9 @@
     <title>Holiday</title>
   </head>
   <body>
-    <h1> Are you going for holidays?</h1>
-    <h1> When are you going?</h1></br>
-    <h2>Check the weather and pick up the right place for you!</h2>
-    <ul>
-      {{#each weather}}
+    <h1> Are you ready for holidays?</h1>
+    <h2> Pick where you want to go!</h2></br>  <ul>
+      {{#each keyArray}}
        <li><a href=/weather/{{id}}>{{name}}</a></li>
      {{/each}}
     </ul>
