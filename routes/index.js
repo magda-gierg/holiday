@@ -18,10 +18,28 @@ router.get('/weather', function (req, res) {
   // res.send('hello')
 })
 
+
+router.get('/form', function (req, res) {
+res.render('form')
+})
+
+router.post('/myForm', function(req, res) {
+  db.addUser(req.body, req.app.get('connection'))
+    .then(function () {
+      res.redirect('/')
+    })
+    .catch(function (err) {
+      res.status(500).send('DATABASE ERROR: ' + err.message)
+    })
+})
+
+
+
+
 router.get('/weather/:id', function (req, res) {
-  db.getLocation(req.params.id, req.app.get('connection'))
-  .then(function (weather) {
-    res.render('location', weather[0])
+  db.getLocations(req.params.id, req.app.get('connection'))
+  .then(function (locations) {
+    res.render('location', {locations: locations})
   })
   .catch(function (err) {
     res.status(500).send('DATABASE ERROR: ' + err.message)
@@ -29,9 +47,9 @@ router.get('/weather/:id', function (req, res) {
 })
 
 router.get('/locations/:id', function (req, res) {
-  db.getActivity(req.params.id, req.app.get('connection'))
-  .then(function (activity) {
-    res.render('activities', activity[0])
+  db.getActivities(req.params.id, req.app.get('connection'))
+  .then(function (activities) {
+    res.render('activities', activities)
   })
   .catch(function (err) {
     res.status(500).send('DATABASE ERROR: ' + err.message)

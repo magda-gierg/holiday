@@ -1,20 +1,28 @@
 
 module.exports = {
   getWeather: getWeather,
-  getLocation: getLocation,
-  getActivity: getActivity
+  getLocations: getLocations,
+  getActivities: getActivities,
+  addActivity: addActivity
 }
 
 function getWeather (connection) {
   return connection('weather').select()
 }
 
-function getLocation (id, connection) {
+function getLocations (id, connection) {
   return connection('weather').where('weather.id', id)
-  .join('location', 'weather.location_id', '=', 'location.id')
+  .join('location', 'weather.id', '=', 'location.weather_id')
 }
 
-function getActivity (id, connection) {
+function getActivities (id, connection) {
   return connection('activity').where('activity.id', id)
-  .join('activity', 'location.activity_id', '=', 'activity.id')
+  .join('location', 'activity.location_id', '=', 'location.id')
+}
+
+function addActivity (body, connection) {
+  var newActivity= {name: body.name}
+  return  connection('activities').insert(newActivity)
+
+  })
 }
