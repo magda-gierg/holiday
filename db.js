@@ -1,7 +1,7 @@
 
 module.exports = {
   getUser: getUser,
-  getWeather: getWeather
+  getWeather: getWeather,
 }
 
 function getWeather (connection) {
