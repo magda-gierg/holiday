@@ -49,7 +49,7 @@ router.get('/weather/:id', function (req, res) {
 router.get('/locations/:id', function (req, res) {
   db.getActivities(req.params.id, req.app.get('connection'))
   .then(function (activities) {
-    res.render('activities', activities)
+    res.render('activities', {activities})
   })
   .catch(function (err) {
     res.status(500).send('DATABASE ERROR: ' + err.message)
