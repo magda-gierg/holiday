@@ -17,11 +17,12 @@ function getLocations (id, connection) {
 }
 
 function getActivities (id, connection) {
-  return connection('activity').where('activity.id', id)
-  .join('location', 'activity.location_id', '=', 'location.id', 'activity.name as activity_name')
+  return connection('activity').where('activity.location_id', id)
+  .join('location', 'activity.location_id', '=', 'location.id')
+  .select('*', 'activity.name as activity_name')
 }
 
-function addActivity (body, connection) {
-  var newActivity= {name: body.name}
-  return  connection('activities').insert(newActivity)
+function addActivity (id, body, connection) {
+  var newActivity= {name: body.name, location_id: id}
+  return  connection('activity').insert(newActivity)
 }

@@ -4,17 +4,20 @@
     <title>Activities</title>
   </head>
   <body>
-    <h1>Welcome to {{location.name}}</h1>
-    <br>
+    <h1>Welcome to {{name}}</h1>
+
     <p> Here's some fun things to do while you're here : </p>
-    <ul>
+
+  <ul>
     {{#each activities}}
       <li>{{activity_name}} </li>
     {{/each}}
     </ul>
-    <br>
+
 
   </br>
-   <a href="/">Home</a>
+   <a href="/">Home</a></br>
+   <a href="/locations/newactivity/{{id}}">Add new activity</a>
+
   </body>
 </html>
