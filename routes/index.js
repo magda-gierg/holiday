@@ -38,6 +38,4 @@ router.get('/locations/:id', function (req, res) {
   })
 })
 
-
-
 module.exports = router
