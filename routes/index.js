@@ -18,6 +18,24 @@ router.get('/weather', function (req, res) {
   // res.send('hello')
 })
 
+
+router.get('/form', function (req, res) {
+res.render('form')
+})
+
+router.post('/myForm', function(req, res) {
+  db.addUser(req.body, req.app.get('connection'))
+    .then(function () {
+      res.redirect('/')
+    })
+    .catch(function (err) {
+      res.status(500).send('DATABASE ERROR: ' + err.message)
+    })
+})
+
+
+
+
 router.get('/weather/:id', function (req, res) {
   db.getLocations(req.params.id, req.app.get('connection'))
   .then(function (locations) {

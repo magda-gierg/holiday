@@ -2,7 +2,8 @@
 module.exports = {
   getWeather: getWeather,
   getLocations: getLocations,
-  getActivities: getActivities
+  getActivities: getActivities,
+  addActivity: addActivity
 }
 
 function getWeather (connection) {
@@ -17,4 +18,11 @@ function getLocations (id, connection) {
 function getActivities (id, connection) {
   return connection('activity').where('activity.id', id)
   .join('location', 'activity.location_id', '=', 'location.id')
+}
+
+function addActivity (body, connection) {
+  var newActivity= {name: body.name}
+  return  connection('activities').insert(newActivity)
+
+  })
 }
