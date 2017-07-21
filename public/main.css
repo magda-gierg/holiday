@@ -1,0 +1,86 @@
+body {
+  background-color: #DCDCDC;
+  font-family: 'Gloria Hallelujah', cursive !important;
+}
+
+h1 {
+  padding-top: 100px;
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+li {
+  float: left;
+  list-style-type: none;
+  margin-left: 25px;
+  margin-right: 25px;
+  height: 250px;
+  width: 250px;
+  font-size: 25px;
+  border-style: solid;
+}
+
+a {
+  color: black!important;
+}
+
+a:hover {
+  color: white!important;
+}
+
+.location {
+  width: 54%;
+  margin: 0 auto;
+  display: flex;
+}
+
+.footer {
+  width:10%;
+  margin: 0 auto;
+  display: flex;
+  text-align: center;
+}
+.beach, .location1, .location2, .location3 {
+  background-image:url("images/Beach.png");
+  background-repeat: no-repeat;
+  background-size: 200px 200px;
+  background-position: 23px 43px;
+  text-align: center;
+}
+
+.city, .location4, .location5, .location6  {
+  background-image: url("images/city.png");
+  background-size: 260px 260px;
+  background-position: -8px 9px;
+  text-align: center;
+}
+
+
+.mountains, .location7, .location8, .location9 {
+  background-image: url("images/mountains.png");
+  background-size: 300px 300px;
+  background-position: 0 9px;
+  text-align: center;
+}
+
+.weather1 {
+  background-image: url("images/Beach.png");
+  background-size: 230px 230px;
+  background-repeat: no-repeat;
+  background-position: 11px 22px;
+}
+
+.weather2 {
+  background-image: url("images/mountains.png");
+  background-size: 300px 300px;
+  background-position: 0 9px;
+}
+
+.weather3 {
+  background-image: url("images/city.png");
+  background-size: 260px 260px;
+  background-position: -8px 9px;
+}
