@@ -1,12 +1,47 @@
 
-<form class="form" action="/locations/newactivity/{{id}}"" method="post">
 
-  <label for="name" class="form-item">
-    Activity you like:
-    <input type="text" name="name" value="{{name}}">
+<!DOCTYPE html>
+<html>
 
-  </label>
+<head>
+  <title>Activities</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+</head>
+
+<body>
+
+  <body>
+    <div class="container activities">
+      <div class="row">
+        <h1>Add an activity.</h1>
+        <p> Add a fun thing you like to do: </p>
+        <div class="choose">
+
+          <form class="form" action="/locations/newactivity/{{id}}" method="post">
+
+            <label for="name" class="form-item">
+              Activity you like:
+              <input type="text" name="name" value="{{name}}">
+
+            </label>
 
 
-  <input type="submit" name="" value="Submit">
-</form>
+            <input class="button" type="submit" name="" value="Submit">
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="choose">
+        <h3> Have a great trip !</h3>
+        <a class="button" href="/">Home</a>
+      </div>
+
+    </div>
+
+  </body>
+
+</html>
