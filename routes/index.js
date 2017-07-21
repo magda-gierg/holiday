@@ -59,7 +59,7 @@ router.get('/activities/:activity_id', function (req, res) {
   db.getPlaces(req.params.activity_id, req.app.get('connection'))
   .then(function (locations) {
     console.log({locations});
-    res.render('places', {id: req.params.id, activity_name: locations[0] ? locations[0].activity_name : 'name', locations: locations})
+    res.render('places', {id: req.params.id, activity_name: locations[0] ? locations[0].activity_name : 'name', locations:locations})
   })
   .catch(function (err) {
     console.log({err});
