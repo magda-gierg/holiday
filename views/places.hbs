@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Holiday</title>
+  </head>
+  <body>
+    <h2>Locations where you can {{activity_name}}</h2></br>
+    <ul>
+      {{#each locations}}
+       <li><a href=/locations/{{location_id}}>{{location_name}}</a></li>
+     {{/each}}
+    </ul>
+    <a href="/">Home</a>
+  </body>
+</html>

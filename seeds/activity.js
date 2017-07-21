@@ -25,7 +25,7 @@ exports.seed = function (knex, Promise) {
         knex('activity').insert({id: 11, name: 'Te Papa', location_id: 4}),
         knex('activity').insert({id: 12, name: 'Mt. Vic', location_id: 4}),
         knex('activity').insert({id: 13, name: 'snow boarding', location_id: 8}),
-        knex('activity').insert({id: 14, name: 'Cable Car', location_id: 4}),
+        knex('activity').insert({id: 14, name: 'Cable Car', location_id: 4})
         // Dunedin
       ]);
     });
