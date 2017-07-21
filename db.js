@@ -23,7 +23,7 @@ function getActivities (id, connection) {
   return connection('activity')
   .where('activity.location_id', id)
   .join('location', 'activity.location_id', '=', 'location.id')
-  .select('*', 'activity.name as activity_name')
+  .select('*', 'activity.id as id','activity.name as activity_name')
 }
 
 function addActivity (id, body, connection) {
@@ -38,8 +38,10 @@ function getPlaces (location_id, connection) {
     .select('*', 'location.name as location_name', 'location.id as location_id', 'activity.name as activity_name')
 }
 
-function locationByActivity(location_id, connection) {
-  return connection('join')
-  .where('join.location_id', location_id)
-  .join('activity', 'join.activity_id', 'activity.id')
+function locationByActivity(activity_id, connection) {
+  console.log(activity_id)
+  return connection('location')
+  .join('activity_locations', 'activity_locations.location_id', 'location.id')
+  .where('activity_locations.activity_id', activity_id)
+
 }
