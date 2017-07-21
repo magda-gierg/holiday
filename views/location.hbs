@@ -1,18 +1,40 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Location</title>
-  </head>
-  <body>
-    <h2>Here are some beautiful spots for you to choose !</h2>
-    <ul>
-    {{#each locations}}
-      <li><a href="/locations/{{location_id}}">{{name}} </a></li>
-    {{/each}}
-    </ul>
-    <br>
-    <h2> Have a great trip !</h2>
-  </br>
-   <a href="/">Home</a>
-  </body>
+
+<head>
+  <title>Location</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container location">
+
+    <div class="row">
+        <h1>Here are some beautiful spots for you to choose !</h1>
+      <div class="choose">
+
+
+        <ul>
+          {{#each locations}}
+            <a href="/locations/{{location_id}}"><li class="location{{location_id}}">{{name}}</li></a>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+
+    <div class="choose">
+        <h3> Have a great trip !</h3>
+      <a href="/">Home</a>
+    </div>
+
+  </div>
+
+
+</body>
+
 </html>
