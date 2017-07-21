@@ -55,7 +55,7 @@ router.get('/locations/:location_id', function (req, res) {
     res.status(500).send('DATABASE ERROR: ' + err.message)
   })
 })
-router.get('/activities/:activity_id', function (req, res) {
+router.get('/activities/:acti2vity_id', function (req, res) {
 
   db.locationByActivity(req.params.activity_id, req.app.get('connection'))
   .then(function(loctivities) {

@@ -27,6 +27,7 @@ function getActivities (id, connection) {
 }
 
 function addActivity (id, body, connection) {
+  console.log({body});
   var newActivity= {name: body.name, location_id: id}
   return  connection('activity').insert(newActivity)
 }
