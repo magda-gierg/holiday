@@ -1,27 +1,39 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Activities</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/skeleton.css">
-    <link rel="stylesheet" href="/main.css">
-    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
-  </head>
+
+<head>
+  <title>Activities</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+</head>
+
+<body>
+
   <body>
-    <h1>Welcome to {{name}}</h1>
+    <div class="container activities">
+      <div class="row">
+        <h1>Welcome to {{name}}</h1>
+        <p> Here's some fun things to do while you're here : </p>
+        <div class="choose">
+          <ul class="activitiesUl">
+            {{#each activities}}
+              <li>{{activity_name}}</li>
+            {{/each}}
+          </ul>
+            <a href="/locations/newactivity/{{id}}">Add new activity</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="choose">
+        <h3> Have a great trip !</h3>
+        <a class="button" href="/">Home</a>
+      </div>
 
-    <p> Here's some fun things to do while you're here : </p>
-
-  <ul>
-    {{#each activities}}
-      <li>{{activity_name}} </li>
-    {{/each}}
-    </ul>
-
-
-  </br>
-   <a href="/">Home</a></br>
-   <a href="/locations/newactivity/{{id}}">Add new activity</a>
+    </div>
 
   </body>
+
 </html>
