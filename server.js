@@ -9,7 +9,7 @@ var index = require('./routes/index')
 var app = express()
 
 // Middleware
-
+app.use(express.static('./public'))
 app.engine('hbs', hbs({extname: 'hbs'}))
 app.set('view engine', 'hbs')
 app.set('views', path.join(__dirname, 'views'))
