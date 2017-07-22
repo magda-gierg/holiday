@@ -1,15 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Holiday</title>
-  </head>
+
+
+      <title>Locations</title>
+      <link rel="stylesheet" href="css/normalize.css">
+      <link rel="stylesheet" href="css/skeleton.css">
+      <link rel="stylesheet" href="/main.css">
+      <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+    </head>
+
+
   <body>
-    <h2>Locations where you can {{activity_name}}</h2></br>
-    <ul>
-      <!-- {{#each locations}} -->
+    <div class="container activities">
+      <div class="row">
+    <h1>Locations where you can go {{name}}</h1></br>
+    <div class="choose">
+      <ul class="activitiesUl">
+
+      {{#each locations}}
        <li><a href=/locations/{{location_id}}>{{location_name}}</a></li>
-     <!-- {{/each}} -->
+     {{/each}}
     </ul>
-    <a href="/">Home</a>
-  </body>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="choose">
+  <a class="button" href="/">Home</a>
+  </div>
+
+</div>
+
+</body>
+
 </html>

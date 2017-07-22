@@ -21,7 +21,7 @@
         <div class="choose">
           <ul class="activitiesUl">
             {{#each activities}}
-              <li>{{activity_name}}</li>
+              <li><a href="/activity/{{activity_id}}">{{activity_name}}</a></li>
             {{/each}}
           </ul>
             <a href="/locations/newactivity/{{id}}">Add new activity</a>
