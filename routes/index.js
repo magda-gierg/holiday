@@ -9,29 +9,28 @@ router.get('/', (req, res) => {
 
 router.get('/weather', function (req, res) {
   db.getWeather(req.app.get('connection'))
-    .then(function (weatherArray) {
-      res.render('index', { keyArray: weatherArray })
-    })
-    .catch(function (err) {
-      res.status(500).send('DATABASE ERROR: ' + err.message)
-    })
-  // res.send('hello')
+  .then(function (weatherArray) {
+    res.render('index', { keyArray: weatherArray })
+  })
+  .catch(function (err) {
+    res.status(500).send('DATABASE ERROR: ' + err.message)
+  })
 })
 
 
 router.get('/locations/newactivity/:id', function (req, res) {
-res.render('form', {id: req.params.id})
+  res.render('form', {id: req.params.id})
 })
 
 router.post('/locations/newactivity/:id', function(req, res) {
   var id = req.params.id
   db.addActivity(id, req.body, req.app.get('connection'))
-    .then(function () {
-      res.redirect('/locations/' + id)
-    })
-    .catch(function (err) {
-      res.status(500).send('DATABASE ERROR: ' + err.message)
-    })
+  .then(function () {
+    res.redirect('/locations/' + id)
+  })
+  .catch(function (err) {
+    res.status(500).send('DATABASE ERROR: ' + err.message)
+  })
 })
 
 

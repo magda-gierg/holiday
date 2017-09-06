@@ -1,4 +1,3 @@
-
 module.exports = {
   getWeather: getWeather,
   getLocations: getLocations,
@@ -29,11 +28,11 @@ function addActivity (id, body, connection) {
   var newActivity= {name: body.name}
   return connection('activity').insert(newActivity)
   .then(function(activity) {
-    // console.log(activity)
     var newActivityLocation= {location_id: id, activity_id: activity[0]}
     return connection('activity_locations').insert(newActivityLocation)
   })
 }
+
 function locationsByActivity(id, connection) {
   return connection('location')
   .join('activity_locations', 'activity_locations.location_id', 'location.id')
