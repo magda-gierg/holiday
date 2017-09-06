@@ -1,11 +1,9 @@
-
 module.exports = {
   getWeather: getWeather,
   getLocations: getLocations,
   getActivities: getActivities,
   addActivity: addActivity,
-  getPlaces: getPlaces,
-  locationByActivity: locationByActivity
+  locationsByActivity: locationsByActivity
 }
 
 function getWeather (connection) {
@@ -13,36 +11,32 @@ function getWeather (connection) {
 }
 
 function getLocations (id, connection) {
-  return connection('weather')
-    .where('weather.id', id)
-    .join('location', 'weather.id', '=', 'location.weather_id')
-    .select('*', 'location.id as location_id')
+  return connection('weather').where('weather.id', id)
+  .join('location', 'weather.id', '=', 'location.weather_id')
+  .select('*', 'location.id as location_id')
 }
 
 function getActivities (id, connection) {
   return connection('activity')
-  .where('activity.location_id', id)
-  .join('location', 'activity.location_id', '=', 'location.id')
-  .select('*', 'activity.id as id','activity.name as activity_name')
+  .join('activity_locations', 'activity_locations.activity_id', 'activity.id')
+  .join('location', 'location.id', 'activity_locations.location_id')
+  .where('location.id',id)
+  .select('*', 'activity.name as activity_name', 'activity.id as activity_id')
 }
 
 function addActivity (id, body, connection) {
-  console.log({body});
-  var newActivity= {name: body.name, location_id: id}
-  return  connection('activity').insert(newActivity)
+  var newActivity= {name: body.name}
+  return connection('activity').insert(newActivity)
+  .then(function(activity) {
+    var newActivityLocation= {location_id: id, activity_id: activity[0]}
+    return connection('activity_locations').insert(newActivityLocation)
+  })
 }
 
-function getPlaces (location_id, connection) {
-  return connection('activity')
-    .where('location.id', location_id)
-    .join('location', 'activity.location_id', 'location.id')
-    .select('*', 'location.name as location_name', 'location.id as location_id', 'activity.name as activity_name')
-}
-
-function locationByActivity(activity_id, connection) {
-  console.log(activity_id)
+function locationsByActivity(id, connection) {
   return connection('location')
   .join('activity_locations', 'activity_locations.location_id', 'location.id')
-  .where('activity_locations.activity_id', activity_id)
-
+  .join('activity', 'activity.id', 'activity_locations.activity_id')
+  .where('activity.id',id)
+  .select('*', 'location.name as location_name', 'location.id as location_id')
 }

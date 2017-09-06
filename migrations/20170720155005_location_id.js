@@ -1,5 +1,3 @@
-
-
 exports.up = function (knex, Promise) {
   return knex.schema.table('location', function (table) {
     table.integer('weather_id')
