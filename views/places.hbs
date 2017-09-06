@@ -1,37 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-
-
-      <title>Locations</title>
-      <link rel="stylesheet" href="css/normalize.css">
-      <link rel="stylesheet" href="css/skeleton.css">
-      <link rel="stylesheet" href="/main.css">
-      <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
-    </head>
-
-
-  <body>
-    <div class="container activities">
-      <div class="row">
-    <h1>Locations where you can go {{name}}</h1></br>
-    <div class="choose">
-      <ul class="activitiesUl">
-
-      {{#each locations}}
-       <li><a href=/locations/{{location_id}}>{{location_name}}</a></li>
-     {{/each}}
-    </ul>
+<head>
+  <title>Locations</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+</head>
+<body>
+  <div class="container activities">
+    <div class="row">
+      <h1>Locations where you can go {{name}}</h1></br>
+      <div class="choose">
+        <ul class="activitiesUl">
+          {{#each locations}}
+          <li><a href=/locations/{{location_id}}>{{location_name}}</a></li>
+          {{/each}}
+        </ul>
       </div>
     </div>
   </div>
   <div class="footer">
     <div class="choose">
-  <a class="button" href="/">Home</a>
+      <a class="button" href="/">Home</a>
+    </div>
   </div>
-
-</div>
-
 </body>
-
 </html>

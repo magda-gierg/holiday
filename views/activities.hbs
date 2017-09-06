@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>Activities</title>
   <link rel="stylesheet" href="css/normalize.css">
@@ -8,34 +7,26 @@
   <link rel="stylesheet" href="/main.css">
   <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
 </head>
-
-
-
-
-
-  <body>
-    <div class="container activities">
-      <div class="row">
-        <h1>Welcome to {{name}}</h1>
-        <p> Here's some fun things to do while you're here : </p>
-        <div class="choose">
-          <ul class="activitiesUl">
-            {{#each activities}}
-              <li><a href="/activity/{{activity_id}}">{{activity_name}}</a></li>
-            {{/each}}
-          </ul>
-            <a href="/locations/newactivity/{{id}}">Add new activity</a>
-        </div>
-      </div>
-    </div>
-    <div class="footer">
+<body>
+  <div class="container activities">
+    <div class="row">
+      <h1>Welcome to {{name}}</h1>
+      <p> Here's some fun things to do while you're here : </p>
       <div class="choose">
-        <h3> Have a great trip !</h3>
-        <a class="button" href="/">Home</a>
+        <ul class="activitiesUl">
+          {{#each activities}}
+          <li><a href="/activity/{{activity_id}}">{{activity_name}}</a></li>
+          {{/each}}
+        </ul>
+        <a href="/locations/newactivity/{{id}}">Add new activity</a>
       </div>
-
     </div>
-
-  </body>
-
+  </div>
+  <div class="footer">
+    <div class="choose">
+      <h3> Have a great trip !</h3>
+      <a class="button" href="/">Home</a>
+    </div>
+  </div>
+</body>
 </html>

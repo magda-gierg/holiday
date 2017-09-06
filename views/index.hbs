@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Holiday</title>
-    <link rel="stylesheet" href="/main.css">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/skeleton.css">
-    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
-  </head>
-  <body>
-<div class="container">
-<div class="row">
-    <h1>Are you ready for holidays?</h1>
-    <h2>Pick where you want to go!</h2></br>  <ul>
-      {{#each keyArray}}
-       <a href=/weather/{{id}}><li class="weather{{id}}"></li></a>
-     {{/each}}
-    </ul>
+<head>
+  <title>Holiday</title>
+  <link rel="stylesheet" href="/main.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <h1>Are you ready for holidays?</h1>
+      <h2>Pick where you want to go!</h2></br>  <ul>
+        {{#each keyArray}}
+        <a href=/weather/{{id}}><li class="weather{{id}}"></li></a>
+        {{/each}}
+      </ul>
     </div>
-    </div>
-  </body>
+  </div>
+</body>
 </html>
