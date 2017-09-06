@@ -47,7 +47,6 @@ router.get('/weather/:id', function (req, res) {
 router.get('/locations/:id', function (req, res) {
   db.getActivities(req.params.id, req.app.get('connection'))
   .then(function (activities) {
-    // console.log(activities)
     res.render('activities', {id: req.params.id, name: activities[0].name, activities: activities})
   })
   .catch(function (err) {
@@ -59,7 +58,6 @@ router.get('/locations/:id', function (req, res) {
 router.get('/activity/:id', function (req, res) {
   db.locationsByActivity(req.params.id, req.app.get('connection'))
   .then(function (locations) {
-    console.log(locations)
     res.render('places', {id: req.params.id, name: locations[0].name, locations: locations})
   })
   .catch(function (err) {
