@@ -24,10 +24,8 @@ router.get('/locations/newactivity/:id', function (req, res) {
 
 router.post('/locations/newactivity/:id', function(req, res) {
   var id = req.params.id
-  console.log(req.body);
   db.addActivity(id, req.body, req.app.get('connection'))
   .then(function (response) {
-    console.log({response});
     res.redirect('/locations/' + id)
   })
   .catch(function (err) {
