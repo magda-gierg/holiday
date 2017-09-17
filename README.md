@@ -1,24 +1,25 @@
-# Boilerplate: Knex.js
+One of our earliest team projects
 
-Phase 1 boilerplate project with:
-
- - Express
- - Knex
- - SQLite3
- - Express Handlebars
- - body-parser
- - AVA
- - Node Inspector
- - nodemon
+You can find us online https://devholiday.herokuapp.com/weather
 
 
-## Install
+Getting started:
 
-```
+git clone https://github.com/magda-gierg/holiday
+
+cd holiday
+
 npm install
-npm run knex migrate:latest
-npm run knex seed:run
-npm run dev
-```
 
-Be sure to check out the other npm scripts too.
+npm run knex migrate:latest
+
+npm run knex seed:run
+
+npm run dev and go to http://localhost:3000/
+
+
+Authors:
+
+Magda Giergiczny
+Gabriel Canaan
+Tom Revill   
